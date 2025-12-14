@@ -1,302 +1,135 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的导航页</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('http://files.unn.pp.ua/download/pictures%2Fbackground.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        
-        .header {
-            color: #fff;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        
-        .search-container {
-            padding: 3rem;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto 20px;
-        }
-        
-        .search-box {
-            width: 100%;
-            padding: 15px 18px;
-            font-size: 20px;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 12px;
-        }
-        
-        .link-item {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            padding: 12px;
-            transition: all 0.2s;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            height: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .link-item:hover {
-            background-color: rgba(255, 255, 255, 0.85);
-            transform: translateY(-2px);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-        }
-        
-        .link-item a {
-            text-decoration: none;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-        }
-        
-        .link-icon {
-            width: 24px;
-            height: 24px;
-            margin-bottom: 8px;
-            object-fit: contain;
-        }
-        
-        .link-text {
-            font-size: 14px;
-            text-align: center;
-            word-break: break-word;
-            max-width: 100%;
-        }
-        .foot_marker {
-            position: fixed;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 12px;
-            color: rgba(255,255,255,0.8);
-            z-index: 999;
-            padding: 10px 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protect Our Planet · Peace for Humanity</title>
 
-        .foot_marker a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 15px;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #e6f7f0, #eaf1ff);
+      color: #2c3e50;
+      line-height: 1.8;
+    }
 
-        .foot_marker a:hover {
-            color: #4388e0;
-        }        
-    </style>
+    header {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 820px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    h2 {
+      color: #1e8449;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #2ecc71;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="search-container">
-        <form action="https://www.google.com/search" method="get" target="_blank">
-            <input class="search-box" type="text" name="q" placeholder="Google 搜索...">
-        </form>
-    </div>
-    
-    <div class="container">
-        <!-- 第一行 -->
-        <div class="link-item">
-            <a href="https://www.google.com" target="_blank">
-                <img class="link-icon" src="https://www.google.com/favicon.ico" alt="Google">
-                <span class="link-text">Google</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.baidu.com" target="_blank">
-                <img class="link-icon" src="https://www.baidu.com/favicon.ico" alt="Baidu">
-                <span class="link-text">Baidu</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.youtube.com" target="_blank">
-                <img class="link-icon" src="https://www.youtube.com/favicon.ico" alt="YouTube">
-                <span class="link-text">Youtube</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://mail.google.com/mail/u/0/" target="_blank">
-                <img class="link-icon" src="https://mail.google.com/favicon.ico" alt="Gmail">
-                <span class="link-text">Gmail</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://github.com" target="_blank">
-                <img class="link-icon" src="https://github.com/favicon.ico" alt="GitHub">
-                <span class="link-text">GitHub</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://ip.sb" target="_blank">
-                <img class="link-icon" src="https://ip.sb/favicon.ico" alt="IP SB">
-                <span class="link-text">ip.sb</span>
-            </a>
-        </div>
-        
-        <!-- 第二行 -->
-        <div class="link-item">
-            <a href="https://dash.cloudflare.com" target="_blank">
-                <img class="link-icon" src="https://www.cloudflare.com/favicon.ico" alt="Cloudflare">
-                <span class="link-text">Cloudflare</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://chat.openai.com" target="_blank">
-                <img class="link-icon" src="https://chat.openai.com/favicon.ico" alt="ChatGPT">
-                <span class="link-text">Chatgpt</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://huggingface.co" target="_blank">
-                <img class="link-icon" src="https://huggingface.co/favicon.ico" alt="Hugging Face">
-                <span class="link-text">Huggingface</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.itdog.cn" target="_blank">
-                <i class="fas fa-network-wired link-icon"></i>
-                <span class="link-text">ITDOG - 在线ping</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://ping0.cc" target="_blank">
-                <i class="fas fa-database link-icon"></i>
-                <span class="link-text">Ping0</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="#" target="_blank">
-                <i class="fas fa-fingerprint link-icon"></i>
-                <span class="link-text">浏览器指纹</span>
-            </a>
-        </div>
-        
-        <!-- 第三行 -->
-        <div class="link-item">
-            <a href="https://ssss.nyc.mn" target="_blank">
-                <i class="fas fa-tachometer-alt link-icon"></i>
-                <span class="link-text">nezha面板</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://hoppscotch.io" target="_blank">
-                <img class="link-icon" src="https://discord.com/favicon.ico" alt="Discord">
-                <span class="link-text">Api测试</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://who.cx" target="_blank">
-                <i class="fas fa-globe link-icon"></i>
-                <span class="link-text">who.cx</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.domcomp.com" target="_blank">
-                <i class="fas fa-tags link-icon"></i>
-                <span class="link-text">域名比价</span>
-            </a>
-        </div>
-        
-        <div class="link-item">
-            <a href="https://www.nodeseek.com" target="_blank">
-                <i class="fas fa-server link-icon"></i>
-                <span class="link-text">NodeSeek</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://linux.do" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">Linux do</span>
-            </a>
-        </div>
-        
-        <!-- 第四行 -->
-        <div class="link-item">
-            <a href="https://music.gvrander.eu.org" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">在线音乐</span>
-            </a>           
-        </div>
-        <div class="link-item">
-            <a href="https://www.freereceivesms.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">免费接码</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://sublink.eooce.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">订阅转换</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://ssh.eooce.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">webssh</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://filebox.nnuu.nyc.mn" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">文件快递柜</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://address.nnuu.nyc.mn" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">真实地址生成</span>
-            </a> 
-        </div>
+  <header>
+    <h1>Protect Our Planet · Peace for Humanity</h1>
+    <p>
+      Earth is the shared home of all humankind, and peace is the foundation
+      upon which civilization endures. Environmental protection and world peace
+      are not optional ideals, but shared responsibilities.
+    </p>
+  </header>
 
-        <!-- 版权 -->
-        <div class="foot_marker">
-        <a href="https://github.com/eooce" target="_blank">Powered by eooce</a>
+  <section>
+    <div class="card">
+      <h2>Why Environmental Protection Matters</h2>
+      <p>
+        Climate change, ecosystem degradation, and resource depletion are
+        increasingly shaping our daily lives. Protecting the environment is not
+        about rejecting progress, but about ensuring that progress remains
+        sustainable.
+      </p>
+      <p>
+        Every effort to conserve energy, reduce waste, and respect nature
+        contributes to preserving choices and opportunities for future
+        generations.
+      </p>
+      <div class="quote">
+        “We do not inherit the Earth from our ancestors; we borrow it from our children.”
+      </div>
     </div>
 
-    <script>
-        document.querySelectorAll('.link-item:not(.empty)').forEach(item => {
-            const icon = item.querySelector('img.link-icon');
-            if (icon) {
-                icon.onerror = function() {
-                    this.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMnptMCAyYzQuNDE4IDAgOCAzLjU4MiA4IDhzLTMuNTgyIDgtOCA4LTgtMy41ODItOC04IDMuNTgyLTggOC04eiIgZmlsbD0iIzMzMyIvPjwvc3ZnPg==';
-                }
-            }
-        });
-    </script>
+    <div class="card">
+      <h2>The Importance of World Peace</h2>
+      <p>
+        War results not only in the loss of human lives, but also in cultural
+        destruction, environmental damage, and long-lasting trauma.
+        Peace does not mean the absence of conflict, but the commitment to
+        resolving differences through dialogue, cooperation, and understanding.
+      </p>
+      <p>
+        When resources are invested in education, healthcare, science, and
+        environmental protection, humanity moves closer to lasting prosperity.
+      </p>
+      <div class="quote">
+        “Peace is not merely a destination, but a continuous effort.”
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>What Individuals Can Do</h2>
+      <ul>
+        <li>Reduce unnecessary energy consumption and support sustainable practices</li>
+        <li>Respect cultural diversity and reject hatred and prejudice</li>
+        <li>Promote rational, compassionate, and evidence-based discussions</li>
+        <li>Make mindful choices in everyday life and influence others by example</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      This website is dedicated to environmental protection and world peace.<br />
+      May humanity choose wisdom over conflict, and sustainability over short-term gain.
+    </p>
+  </footer>
 </body>
 </html>
